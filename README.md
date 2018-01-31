@@ -12,6 +12,7 @@
 ### APIキーについて
 
 direnvで環境変数をセットするようにする
+
 https://qiita.com/kompiro/items/5fc46089247a56243a62
 
 #### direnvインストール
@@ -37,6 +38,8 @@ export ACL_CONSUMERKEY=アクセストークン
 ```
 
 #### 確認
+一応,列車情報のデータをエンドポイントに指定
+
 ```
 curl -X GET https://api-tokyochallenge.odpt.org/api/v4/odpt:Train\?acl:consumerKey\=${ACL_CONSUMERKEY}
 ```
