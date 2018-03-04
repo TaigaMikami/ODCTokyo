@@ -3,8 +3,12 @@ class MichikusaController < ApplicationController
   end
 
   def index
-    @from_station = Station.find_by(name: params[:from_station])
-    @to_station = Station.find_by(name: params[:to_station])
+    if params[:from_station] && params[:to_station]
+      cookies[:from] = params[:from_station]
+      cookies[:to] = params[:to_station]
+    end
+    @from_station = Station.find_by(name: cookies[:from])
+    @to_station = Station.find_by(name: cookies[:to])
     @between_stations = []
     calc_station_from_to
   end
