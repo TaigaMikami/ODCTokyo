@@ -9,17 +9,19 @@
   </div>
   <div class="spots">
     <% @between_stations.each do |station| %>
-      <div class="spot">
-        <% station.spots.each do |spot| %>
-          <%= image_tag("#{spot.image_url}", :size => "200x200", :alt => "アイコン") %>
-          <div class="spot-title">
-            <h1><%= spot.name %></h1>
-            <div class="close-station">
-              <label>最寄駅</label><%= station.name %>駅
+      <% station.spots.each do |spot| %>
+        <a href="/spots/<%= spot.id %>">
+          <div class="spot">
+            <%= image_tag("#{spot.image_url}", :size => "200x200", :alt => "アイコン") %>
+            <div class="spot-title">
+              <h1><%= spot.name %></h1>
+              <div class="close-station">
+                <label>最寄駅</label><%= station.name %>駅
+              </div>
             </div>
           </div>
-        <% end %>
-      </div>
+        </a>
+      <% end %>
     <% end %>
   </div>
 </div>
