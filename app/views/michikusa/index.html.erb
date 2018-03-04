@@ -1,8 +1,6 @@
 <% @between_stations.each do |station| %>
   <p><%= station.name %></p>
+  <% station.spots.each do |spot| %>
+    <p><%= spot.name %></p>
+  <% end %>
 <% end %>
-
-<p><%= @from_station %></p>
-<p><%= @to_station %></p>
-
-<a class="twitter-timeline" width="320px" height="400px" href="https://twitter.com/search?q=%E6%9D%B1%E4%BA%AC%E3%82%BF%E3%83%AF%E3%83%BC&src=typd&lang=en">Tweets by souken_blog</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

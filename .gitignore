@@ -23,3 +23,7 @@
 .byebug_history
 
 .envrc
+
+# IDE系
+.idea
+./ODCTokyo.iml

@@ -13,13 +13,13 @@ class MichikusaController < ApplicationController
   end
 
   private
-
   ## TODO 可読性が低すぎる
   # 進行方向順になっている
   def calc_station_from_to
     id_array = (1..29).to_a
     from = @from_station.id
     to = @to_station.id
+    between_stations = []
 
     if to > from
       if (to - from).abs < (29 - to + from).abs
