@@ -90,9 +90,12 @@ body {
 }
 
 /* ---------- index ---------- */
+.index {
+  background-color: #fcfcfc;
+}
 .from-to-label {
   margin: 0 auto;
-  margin-top: 1.5em;
+  padding-top: 1.5em;
   text-align: center;
   label {
     font-size: 3em;
