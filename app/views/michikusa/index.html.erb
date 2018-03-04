@@ -1,6 +1,25 @@
-<% @between_stations.each do |station| %>
-  <p><%= station.name %></p>
-  <% station.spots.each do |spot| %>
-    <p><%= spot.name %></p>
-  <% end %>
-<% end %>
+<div class="from-to-label">
+  <label id="from"><%= @from_station.name %>駅</label> <label>
+    →<img src="/train.png" width="500" height="107">→
+  </label> <label id="to"><%= @to_station.name %>駅</label>
+</div>
+<div class="map-spots">
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d51851.72622697257!2d139.73559690551429!3d35.68357853250966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m5!1s0x60188b857628235d%3A0xcdd8aef709a2b520!2z5p2x5Lqs44CB5p2x5Lqs6YO9!3m2!1d35.7090259!2d139.7319925!4m0!5e0!3m2!1sja!2sjp!4v1520178693203" width="700" height="800" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  <div class="spots">
+    <% @between_stations.each do |station| %>
+      <div class="spot">
+        <% station.spots.each do |spot| %>
+          <%= image_tag("#{spot.image_url}", :size => "200x200", :alt => "アイコン") %>
+          <div class="spot-title">
+            <h1><%= spot.name %></h1>
+            <div class="close-station">
+              <label>最寄駅</label><%= station.name %>駅
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

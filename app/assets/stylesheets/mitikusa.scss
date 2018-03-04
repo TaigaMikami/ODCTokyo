@@ -1,13 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family:"ヒラギノ丸ゴ Pro W4", "Hiragino maru Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO","Verdana","Osaka",sans-serif;
+}
+
 .main {
   margin: 0;
   font-size: 13px;
   color: white;
 }
 
-// top
+/* ---------- top ---------- */
 .top-main {
   // color: #000;
   font-family: "Nico Moji";
@@ -83,4 +87,80 @@
 .app-discription{
   padding-top: 1.4em;
   text-align: center;
+}
+
+/* ---------- index ---------- */
+.from-to-label {
+  margin: 0 auto;
+  margin-top: 1.5em;
+  text-align: center;
+  label {
+    font-size: 3em;
+  }
+  #from {
+    color: white;
+    background-color: #5590C8;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+  }
+
+  #to {
+    color: white;
+    background-color: #D459A8;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+  }
+}
+
+.map-spots {
+  display: flex;
+}
+
+.map {
+  margin: 50px 0px 0px 70px;
+  width: 40%;
+  height: 500px;
+  iframe {
+    border-radius: 5px;
+  }
+}
+
+.spots {
+  width: 50%;
+  margin-top: 50px;
+}
+
+.spot {
+  padding: 0.4em 0.5em;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 30px;
+
+  img {
+    border-radius: 50%;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .spot-title{
+    margin-top: 0.5em;
+    margin-left: 20px;
+  }
+
+  .close-station{
+    margin-top: 0.5em;
+  }
+
+  label {
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #FCBA07;
+    color: black;
+    border-radius: 5px;
+  }
 }

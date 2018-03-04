@@ -13,5 +13,5 @@ CSV.foreach('db/station.csv') do |row|
 end
 
 CSV.foreach('db/tourlist_spot.csv') do |row|
-  Spot.create(:name => row[0], :lat => row[1], :lng => row[2], :station_id => row[3])
+  Spot.create(:name => row[0], :lat => row[1], :lng => row[2], :station_id => row[3], :image_url => row[4])
 end
