@@ -4,7 +4,7 @@ class CreateSpots < ActiveRecord::Migration[5.1]
       t.string :name
       t.decimal :lat
       t.decimal :lng
-      t.integer :station_id
+      t.references :station ,foreign_key: true
       t.text :description
       t.string :image_url
       t.string :link_url

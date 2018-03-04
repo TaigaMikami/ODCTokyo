@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180304071437) do
     t.string "link_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["station_id"], name: "index_spots_on_station_id"
   end
 
   create_table "stations", force: :cascade do |t|

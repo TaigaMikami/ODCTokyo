@@ -1,9 +1,12 @@
-<%= form_tag do %>
+<%= form_tag({ controller: :michikusa, action: :index}) do %>
   <label for="from_station" class="from-label">From</label>
   <%= text_field_tag :from_station, '', size: 30 %>
   <br>
   <label for="to_station" class="to-label">To</label>
   <%= text_field_tag :to_station, '', size: 30 %>
+  <br>
+  <%= check_box :spot, '' %><label for="">SPOT</label>
+  <%= check_box :gohan, '' %><label for="">GOHANYA</label>
   <br>
   <%= submit_tag 'GO!!', class: "btn btn-success" %>
 <% end %>

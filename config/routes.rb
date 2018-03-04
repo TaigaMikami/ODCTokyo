@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'michikusa#top'
-  get 'michikusa/index'
-  get 'michikusa/show'
+  post '/index', to: 'michikusa#index'
+  get '/index', to: 'michikusa#index'
+  get '/show', to: 'michikusa#show'
 
 end
