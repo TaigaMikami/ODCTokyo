@@ -117,29 +117,75 @@ body {
 
 .map-spots {
   display: flex;
+  margin-top: 1.5em;
 }
 
-#map {
-  margin: 50px 50px 0px 70px;
+.map-box {
+  margin: 50px 30px 0px 70px;
   width: 40%;
   height: 784px;
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 0.5em 1em;
+  border: solid 3px #95ccff;
+  border-radius: 8px;
+  .map-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 30px;
+    background: #fcfcfc;
+    color: #95ccff;
+    font-weight: bold;
+  }
+}
+#map {
+  margin: 1.0em auto;
+  margin-top: 20px;
+  width: 95%;
+  height: 95%;
+  border-radius: 10px;
 }
 
 .spots {
   width: 50%;
   margin-top: 50px;
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1.5em;
+  border: solid 3px #95ccff;
+  border-radius: 8px;
+  padding-top: 2.0em;
+  .spots-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 30px;
+    background: #fcfcfc;
+    color: #95ccff;
+    font-weight: bold;
+  }
+
   a {
     text-decoration: none;
   }
 }
 
 .spot {
-  padding: 0.4em 0.5em;
+  padding: 0.5em 0.5em;
   background: #d6ebff;
   box-shadow: 0px 0px 0px 10px #d6ebff;
   border: dashed 2px white;
   border-radius: 5px;
   display: flex;
+  margin-top: 0.5em;
   margin-bottom: 30px;
 
   img {

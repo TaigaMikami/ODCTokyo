@@ -9,6 +9,7 @@
   <div class="map-spots">
     <%= render :partial => "map" %>
     <div class="spots">
+      <span class="spots-title">観光地一覧</span>
       <% @between_stations.each do |station| %>
         <% station.spots.each do |spot| %>
           <a href="/spots/<%= spot.id %>">
