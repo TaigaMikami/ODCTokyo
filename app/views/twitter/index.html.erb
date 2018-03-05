@@ -1,0 +1,37 @@
+
+<%= form_for @twitter, :html => { :class => 'form-inline', :role => 'form' }, url: '/twitter' do |f| %>
+  <div class="form-group">
+    <%= f.label :tag, "ハッシュタグ", class: 'control-label' %>
+    <%= f.text_field :tag, name: :tag, class: 'form-control', placeholder: '#hogehoge' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :limit, "取得数", class: 'control-label' %>
+    <%= select_tag :limit, options_for_select([50, 100]), class: 'form-control' %>
+  </div>
+  <%= f.submit '取得する', class: 'btn btn-primary' %>
+<% end %>
+
+<br>
+
+<% if @twitter.tweet.present? %>
+  <div class="tweet_table_wrapper">
+  <table class="table table-hover">
+    <thead class="table_top">
+    <tr>
+      <td class="col-md-2">icon</td>
+      <td class="col-md-3">id</td>
+      <td class="col-md-7">tweet</td>
+    </tr>
+    </thead>
+    <tbody class="table_body">
+    <% @twitter.tweet.each do |tweet| %>
+      <tr>
+        <td class="col-md-2"><img src="<%= tweet[:icon] %>" alt="icon"></td>
+        <td class="col-md-3"><%= tweet[:name] %></td>
+        <td class="col-md-7"><%= tweet[:text] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+<% end %>
