@@ -1,18 +1,18 @@
 <div class="index">
   <div class="from-to-label">
-    <label id="from"><%= @from_station.name %>駅</label> <label>
-      →<img src="/train.png" width="500" height="107">→
-    </label> <label id="to"><%= @to_station.name %>駅</label>
+    <label id="from" data-from-name='<%= @from_station.name %>' data-from-lat='<%= @from_station.lat %>' data-from-lng='<%= @from_station.lng %>'>
+      <%= @from_station.name %>駅</label>
+      <label>→<img src="/train.png" width="500" height="107">→</label>
+    <label id="to" data-to-name='<%= @to_station.name %>' data-to-lat='<%= @to_station.lat %>' data-to-lng='<%= @to_station.lng %>'>
+      <%= @to_station.name %>駅</label>
   </div>
   <div class="map-spots">
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d51851.72622697257!2d139.73559690551429!3d35.68357853250966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m5!1s0x60188b857628235d%3A0xcdd8aef709a2b520!2z5p2x5Lqs44CB5p2x5Lqs6YO9!3m2!1d35.7090259!2d139.7319925!4m0!5e0!3m2!1sja!2sjp!4v1520178693203" width="700" height="800" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
+    <%= render :partial => "map" %>
     <div class="spots">
       <% @between_stations.each do |station| %>
         <% station.spots.each do |spot| %>
           <a href="/spots/<%= spot.id %>">
-            <div class="spot">
+            <div class="spot" data-spot-name='<%= spot.name %>' data-spot-lat='<%= spot.lat %>' data-spot-lng='<%= spot.lng %>' >
               <%= image_tag("#{spot.image_url}", :size => "200x200", :alt => "アイコン") %>
               <div class="spot-title">
                 <h1><%= spot.name %></h1>
@@ -28,6 +28,8 @@
   </div>
 </div>
 
+<script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyCC7i28UNJRRqIk6gmtkWcFrgGeg4ZfBJI&callback=initMap" async defer></script>
+
 <script type="text/javascript">
 $(function() {
   // マウスオーバー
@@ -37,4 +39,84 @@ $(function() {
     $(this).css('background', "#d6ebff");
   });
 });
+
+var markerName = [];
+var markerLat = [];
+var markerLng = [];
+var fromName = $('#from').data('from-name');
+var fromLat = $('#from').data('from-lat');
+var fromLng = $('#from').data('from-lng');
+var toName = $('#to').data('to-name');
+var toLat = $('#to').data('to-lat');
+var toLng = $('#to').data('to-lng');
+$('.spot').each(function(index, element){
+  markerName.push($(element).data('spot-name'));
+  markerLat.push($(element).data('spot-lat'));
+  markerLng.push($(element).data('spot-lng'));
+  console.log(markerLat);
+  console.log(markerLng);
+});
+
+var map;
+var tokyo = {lat: 35.681167, lng: 139.767052};
+var fromMarker;
+var toMarker;
+var marker = [];
+var infoWindow = [];
+
+function initMap() {
+  'use strict';
+    var target = document.getElementById('map');
+
+
+    map = new google.maps.Map(target, {
+      center: {lat: markerLat[0], lng: markerLng[0]},
+      zoom: 13,
+      disableDefaultUI: true
+     });
+
+    fromMarker = new google.maps.Marker({
+      position: {lat: fromLat, lng: fromLng},
+      map: map,
+      icon: {
+        url: 'start.png',
+        scaledSize: new google.maps.Size(40, 40)
+      },
+    });
+
+    toMarker = new google.maps.Marker({
+      position: {lat: toLat, lng: toLng},
+      map: map,
+      icon: {
+        url: 'goal.png',
+        scaledSize: new google.maps.Size(40, 40)
+      },
+    });
+
+    for (var i = 0; i < markerName.length; i++) {
+      marker[i] = new google.maps.Marker({ // マーカーの追加
+      position: {lat: markerLat[i], lng: markerLng[i]}, // マーカーを立てる位置を指定
+      map: map, // マーカーを立てる地図を指定
+      icon: {
+        url: 'icon.png',
+        scaledSize: new google.maps.Size(48, 48)
+      },
+      animation: google.maps.Animation.BOUNCE
+   });
+
+   infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+      content: '<div class="sample">' + markerName[i] + '</div>' // 吹き出しに表示する内容
+    });
+    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+    markerEvent(i); // マーカーにクリックイベントを追加
+  }
+}
+
+// マーカーにクリックイベントを追加
+function markerEvent(i) {
+    marker[i].addListener('click', function() { // マーカーをクリックしたとき
+      infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+  });
+}
+
 </script>

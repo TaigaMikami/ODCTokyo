@@ -119,13 +119,10 @@ body {
   display: flex;
 }
 
-.map {
-  margin: 50px 0px 0px 70px;
+#map {
+  margin: 50px 50px 0px 70px;
   width: 40%;
-  height: 500px;
-  iframe {
-    border-radius: 5px;
-  }
+  height: 784px;
 }
 
 .spots {
@@ -170,3 +167,6 @@ body {
     border-radius: 5px;
   }
 }
+
+
+/* ------------- map ---------------- */
