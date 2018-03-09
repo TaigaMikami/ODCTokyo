@@ -1,0 +1,61 @@
+.freetime {
+  margin: 20px 0 50px 0;
+}
+
+.load-map {
+  width: 100%;
+  height: 450px;
+  background-image: url(/tokyo.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  // display: flex;
+  h2 {
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .phase1 ,.phase2, .phase3{
+    margin: 0 auto;
+    width: 25%;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba( 255, 255, 255, 0.80 );
+    border-radius: 30px;
+    box-shadow: 0 0 10px gray;
+
+    p {
+      color: black;
+    }
+  }
+
+  .arrow {
+    margin-top: 120px;
+  }
+}
+
+.phase {
+  display: flex;
+}
+
+.feature-container {
+  padding-bottom: 100px;
+}
+.feature {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+  background-color: rgba( 230, 230, 255, 0.80 );
+  box-shadow: 0 0 8px gray;
+  display: flex;
+  div {
+    margin: 0 auto;
+  }
+}

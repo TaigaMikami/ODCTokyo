@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
       @twitter.tag = @spot.name
       # #の処理
       tag = @twitter.tag.slice(0) == '#' ?  @twitter.tag.slice(1, 999) : @twitter.tag
-      @twitter.tweet = @twitter.client.search("##{tag}", lang: "ja", result_type: 'recent',exclude: "retweets", count: params[:limit]).map do |tweet|
+      @twitter.tweet = @twitter.client.search("##{tag}", lang: "ja", result_type: 'recent',exclude: "retweets", count: 50).map do |tweet|
         {
             icon: tweet.user.profile_image_url,
             name: tweet.user.name,
