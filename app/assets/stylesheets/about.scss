@@ -50,6 +50,8 @@
   margin: 0 auto;
   margin-top: 50px;
   padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-bottom: 50px;
   border-radius: 10px;
   background-color: rgba( 230, 230, 255, 0.80 );
@@ -57,5 +59,8 @@
   display: flex;
   div {
     margin: 0 auto;
+    width: 33%;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
