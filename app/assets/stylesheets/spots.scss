@@ -1,3 +1,50 @@
 // Place all the styles related to the Spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show {
+  display: flex !important;
+  margin-top: 2.0em;
+}
+
+
+.spot-box {
+  width: 35%;
+  margin-left: 60px;
+  img {
+    border-radius: 10px;
+  }
+}
+
+/* --------- twitter -----------*/
+.tweet-container {
+  margin-right: 3.5em;
+}
+
+.table-top{
+  background-color: #5590C8;
+  vertical-align: middle;
+  text-align: center;
+  color:#ffffff;
+}
+
+.tweet-table-wrapper{
+  width: 60%;
+}
+
+.table-top,.table-body {
+  display: block;
+  text-align: center;
+}
+
+.table-top {
+  tr {
+    width: 100% !important;
+  }
+}
+
+.table-body{
+  height: 400px;
+  overflow:scroll;
+  text-align: center;
+}

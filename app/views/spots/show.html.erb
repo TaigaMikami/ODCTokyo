@@ -1,2 +1,29 @@
-<h1><%= @spot.name %></h1>
-<%= image_tag("#{@spot.image_url}", :size => "200x200", :alt => "アイコン") %>
+<div class="show">
+  <div class="spot-box">
+    <%= image_tag("#{@spot.image_url}", :size => "400x400", :alt => "アイコン") %>
+    <h1><%= @spot.name %></h1>
+  </div>
+
+<% if @twitter.tweet.present? %>
+  <div class="tweet-table-wrapper">
+    <div class="tweet-container">
+      <table class="table table-hover">
+        <thead class="table-top">
+        <tr>
+          <td>#<%= @spot.name %>ツイート</td>
+        </tr>
+        </thead>
+        <tbody class="table-body">
+        <% @twitter.tweet.each do |tweet| %>
+          <tr>
+            <td class="col-md-2"><img src="<%= tweet[:icon] %>" alt="icon"></td>
+            <td class="col-md-3"><%= tweet[:name] %></td>
+            <td class="col-md-7"><%= tweet[:text] %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<% end %>
