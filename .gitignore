@@ -23,6 +23,7 @@
 .byebug_history
 
 .envrc
+.DS_Store
 
 # IDE系
 .idea
