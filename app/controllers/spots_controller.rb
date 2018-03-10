@@ -1,9 +1,11 @@
+require 'open3'
 class SpotsController < ApplicationController
   def index
   end
 
   def show
     @spot = Spot.find(params[:id])
+    @test = Open3.capture3('forego','run','python','./ml/twitter_scrap.py',@spot.name)[0]
     @twitter ||= MyTwitter.new
     if @twitter && @spot.name
       @twitter.tag = @spot.name
@@ -24,5 +26,7 @@ class SpotsController < ApplicationController
     logger.error e.message
     flash[:error] = "エラーが起きました[#{e.message}]"
     render action: 'show'
+
   end
+
 end
