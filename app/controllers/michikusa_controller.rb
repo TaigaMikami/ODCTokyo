@@ -9,10 +9,15 @@ class MichikusaController < ApplicationController
     elsif !cookies[:from] && !cookies[:to]
       render 'top'
     end
-    @from_station = Station.find_by(name: cookies[:from])
-    @to_station = Station.find_by(name: cookies[:to])
-    @between_stations = []
-    calc_station_from_to
+
+    begin
+      @from_station = Station.find_by(name: cookies[:from])
+      @to_station = Station.find_by(name: cookies[:to])
+      @between_stations = []
+      calc_station_from_to
+    rescue => e
+      render 'top'
+    end
   end
 
   def show
