@@ -16,6 +16,7 @@ class MichikusaController < ApplicationController
       @between_stations = []
       calc_station_from_to
     rescue => e
+      flash[:danger] = "入力された駅が存在しません"
       render 'top'
     end
   end
