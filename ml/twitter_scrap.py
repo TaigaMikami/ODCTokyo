@@ -275,7 +275,7 @@ def count_pos_word(text):
             try:
                 score = model.similarity('楽しい', chunks[0])
             except KeyError:
-                print("not in vocablary")
+                # print("not in vocablary")
                 continue
 
             if score > sep_vec:
@@ -300,13 +300,13 @@ if __name__ == '__main__':
     total_pos_words =  0
 
     for tweet in getter.collect(total = 3):
-        print(tweet['text'])
+        # print(tweet['text'])
         # 年度を指定
         # if tweet['created_at'][-4:] == year:
         if True:
             tweet_cnt += 1 # 取得tweet数
-            print('------ %d' % tweet_cnt)
-            print('{} {} {}'.format(tweet['id'], tweet['created_at'], '@'+tweet['user']['screen_name']))
+            # print('------ %d' % tweet_cnt)
+            # print('{} {} {}'.format(tweet['id'], tweet['created_at'], '@'+tweet['user']['screen_name']))
 
             _tweet = tweet['text']
 
@@ -318,7 +318,7 @@ if __name__ == '__main__':
             for word in _text:
                 if word != '':
                     text.append(word)
-            print(text)
+            # print(text)
             text = '\n'.join(text)
 
             total_pos_words = total_pos_words + count_pos_word(text)
