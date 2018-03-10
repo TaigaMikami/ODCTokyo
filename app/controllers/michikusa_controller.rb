@@ -6,6 +6,8 @@ class MichikusaController < ApplicationController
     if params[:from_station] && params[:to_station]
       cookies[:from] = params[:from_station]
       cookies[:to] = params[:to_station]
+    elsif !cookies[:from] && !cookies[:to]
+      render 'top'
     end
     @from_station = Station.find_by(name: cookies[:from])
     @to_station = Station.find_by(name: cookies[:to])
