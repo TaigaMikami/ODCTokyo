@@ -8,7 +8,7 @@ cd ODCTokyo
 bundle install
 ```
 
-2. migration
+2.migration
 ```
 bundle exec rake db:migrate
 bundle exec rake db:seed
