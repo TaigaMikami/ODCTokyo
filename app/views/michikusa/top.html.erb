@@ -5,6 +5,9 @@
       <p>あなたの知らない日本へようこそ</p>
     </div>
     <div class="search_form">
+      <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= render :partial => "search_form" %>
     </div>
   </div>
