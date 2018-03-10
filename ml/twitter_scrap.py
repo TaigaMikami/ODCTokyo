@@ -10,6 +10,7 @@ import re
 from gensim.models import word2vec
 import MeCab
 import os
+import sys
 
 CK = os.environ['CK']                             # Consumer Key
 CS = os.environ['CS']    # Consumer Secret
@@ -277,7 +278,6 @@ def count_pos_word(text):
                 print("not in vocablary")
                 continue
 
-            import pdb;pdb.set_trace()
             if score > sep_vec:
                 count_word = count_word + 1
 
@@ -286,7 +286,8 @@ def count_pos_word(text):
 if __name__ == '__main__':
  
     # キーワードで取得
-    keyword = u'TokyoTower'
+    keyword = sys.argv[1]
+    # keyword = u'TokyoTower'
     getter = TweetsGetter.bySearch(keyword)
 
     # ユーザーを指定して取得 （screen_name）
@@ -294,11 +295,11 @@ if __name__ == '__main__':
     # getter = TweetsGetter.byUser(screen_name)
  
     tweet_cnt = 0
-    f = open('./database/{}.txt'.format(keyword, str), 'w') # 書き込みモードで開く
+    # f = open('./database/{}.txt'.format(keyword, str), 'w') # 書き込みモードで開く
 
     total_pos_words =  0
 
-    for tweet in getter.collect(total = 1000):
+    for tweet in getter.collect(total = 3):
         print(tweet['text'])
         # 年度を指定
         # if tweet['created_at'][-4:] == year:
@@ -322,7 +323,7 @@ if __name__ == '__main__':
 
             total_pos_words = total_pos_words + count_pos_word(text)
 
-            f.write(tweet['created_at'] + "\n" + text + "\n\n")
+            # f.write(tweet['created_at'] + "\n" + text + "\n\n")
 
     print("おすすめ度：{}".format(total_pos_words/tweet_cnt))
-    f.close() # ファイルを閉じる
+    # f.close() # ファイルを閉じる
