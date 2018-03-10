@@ -1,5 +1,30 @@
 # ODCTokyo
 
+## 使い方
+1.リポジトリをクローン
+```
+git clone <this repository>
+cd ODCTokyo
+bundle install
+```
+
+2. migration
+```
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
+もしseedファイルの重複が発生しそうな場合には
+```
+bundle exec rake db:migrate:reset
+bundle exec rake db:seed
+```
+
+3.railsサーバー起動
+```
+rails s
+```
+
+
 ## 環境構築
 
 以下のversionで環境構築を行う
