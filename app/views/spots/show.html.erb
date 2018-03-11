@@ -5,24 +5,14 @@
     <div class="close-station">
       <label>最寄駅</label><%= @spot.station.name %>駅
     </div>
+    <%= @spot.description %>
+    <br><br>
+    <%= link_to "#{@spot.name}公式サイトへ", "#{@spot.link_url}", :class => "link_url" %>
   </div>
 
 <% if @twitter.tweet.present? %>
   <div class="tweet-table-wrapper">
     <div class="eval-bar">
-      <!-- MICHIKUSA AIが判定するおすすめ度の大きさ<br>
-      <table>
-        <tr>
-          <td>0　</td>
-          <td>おすすめできない</td>
-        </tr>
-        <tr>
-          <td>100　</td>
-          <td>すごくおすすめ</td>
-        </tr>
-      </table> -->
-
-      <!-- <br> -->
       <%= image_tag("eval-bar.png", :size => "500x41") %>
     </div>
     <div class="machine-evaluation">
