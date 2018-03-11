@@ -29,7 +29,5 @@ class SpotsController < ApplicationController
     logger.error e.message
     flash[:error] = "エラーが起きました[#{e.message}]"
     render action: 'show'
-
   end
-
 end
