@@ -1,10 +1,15 @@
-require 'open3'
 class SpotsController < ApplicationController
+  require 'open3'
+
+  add_breadcrumb 'Top', '/'
+  add_breadcrumb '観光地一覧', :index_path
+
   def index
   end
 
   def show
     @spot = Spot.find(params[:id])
+    add_breadcrumb @spot.name, :spot_path
     # TODO 機械学習の学習済みモデル追加後修正
     # @test = Open3.capture3('forego','run','python','./ml/twitter_scrap.py',@spot.name)[0]
 
