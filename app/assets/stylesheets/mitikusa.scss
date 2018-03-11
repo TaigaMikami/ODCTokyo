@@ -99,12 +99,18 @@ body {
 
 /* ---------- index ---------- */
 .index {
+  padding-top: 4.7em;
   background-color: white;
 }
+
+.bread{
+  margin-left: 20px;
+}
+
 .from-to-label {
   margin: 0 auto;
   text-align: center;
-  padding-top: 6.0em;
+
   label {
     font-size: 3em;
   }

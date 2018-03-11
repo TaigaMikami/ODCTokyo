@@ -1,4 +1,7 @@
 <div class="index">
+  <div class="bread">
+    <%= render_breadcrumbs separator: ' > ' %>
+  </div>
   <div class="from-to-label">
     <label id="from" data-from-name='<%= @from_station.name %>' data-from-lat='<%= @from_station.lat %>' data-from-lng='<%= @from_station.lng %>'>
       <%= @from_station.name %>駅</label>

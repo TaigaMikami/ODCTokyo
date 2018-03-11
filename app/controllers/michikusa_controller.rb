@@ -1,4 +1,7 @@
 class MichikusaController < ApplicationController
+  add_breadcrumb 'Top', '/'
+  add_breadcrumb '観光地一覧', :index_path
+
   def top
   end
 

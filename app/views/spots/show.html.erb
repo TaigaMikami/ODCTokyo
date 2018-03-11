@@ -1,49 +1,54 @@
 <div class="show">
-  <div class="spot-box">
-    <%= image_tag("#{@spot.image_url}", :size => "400x400", :alt => "アイコン") %>
-    <h1><%= image_tag("michikusa.png", :size => "60x60") %>  <%= @spot.name %></h1>
-    <div class="close-station">
-      <label>最寄駅</label><%= @spot.station.name %>駅
-    </div>
-    <%= @spot.description %>
-    <br><br>
-    <%= link_to "#{@spot.name}公式サイトへ", "#{@spot.link_url}", :class => "link_url" %>
-    <br>
-    <%= link_to "観光地一覧へ戻る", index_path  %>
+  <div class="bread">
+    <%= render_breadcrumbs separator: ' > ' %>
   </div>
-
-<% if @twitter.tweet.present? %>
-  <div class="tweet-table-wrapper">
-    <div class="eval-box">
-      <div class="eval-box-title"><%= image_tag("ai-white.png", :size => "20x20") %> MICHIKUSA AI</div>
-      <div class="eval-bar">
-        <%= image_tag("eval-bar.png", :size => "500x41") %>
+  <div class="show-container">
+    <div class="spot-box">
+      <%= image_tag("#{@spot.image_url}", :size => "400x400", :alt => "アイコン") %>
+      <h1><%= image_tag("michikusa.png", :size => "60x60") %>  <%= @spot.name %></h1>
+      <div class="close-station">
+        <label>最寄駅</label><%= @spot.station.name %>駅
       </div>
-      <div class="machine-evaluation">
-        <%= image_tag("ai.png", :size => "100x100") %>
-        <div class="evaluation">
-          AIが判定するおすすめ度
-          <h1><%= @evaluation_point  %></h1>
+      <%= @spot.description %>
+      <br><br>
+      <%= link_to "#{@spot.name}公式サイトへ", "#{@spot.link_url}", :class => "link_url" %>
+      <br>
+      <%= link_to "観光地一覧へ戻る", index_path  %>
+    </div>
+
+  <% if @twitter.tweet.present? %>
+    <div class="tweet-table-wrapper">
+      <div class="eval-box">
+        <div class="eval-box-title"><%= image_tag("ai-white.png", :size => "20x20") %> MICHIKUSA AI</div>
+        <div class="eval-bar">
+          <%= image_tag("eval-bar.png", :size => "500x41") %>
+        </div>
+        <div class="machine-evaluation">
+          <%= image_tag("ai.png", :size => "100x100") %>
+          <div class="evaluation">
+            AIが判定するおすすめ度
+            <h1><%= @evaluation_point  %></h1>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="tweet-container">
-      <table class="table table-hover">
-        <thead class="table-top">
-        <tr>
-          <td><%= image_tag("twitter-white.png", :size => "20x20") %> #<%= @spot.name %>ツイート</td>
-        </tr>
-        </thead>
-        <tbody class="table-body">
-        <% @twitter.tweet.each do |tweet| %>
+      <div class="tweet-container">
+        <table class="table table-hover">
+          <thead class="table-top">
           <tr>
-            <td class="col-md-2"><img src="<%= tweet[:icon] %>" alt="icon"></td>
-            <td class="col-md-3"><%= tweet[:name] %></td>
-            <td class="col-md-7"><%= tweet[:text] %></td>
+            <td><%= image_tag("twitter-white.png", :size => "20x20") %> #<%= @spot.name %>ツイート</td>
           </tr>
-        <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody class="table-body">
+          <% @twitter.tweet.each do |tweet| %>
+            <tr>
+              <td class="col-md-2"><img src="<%= tweet[:icon] %>" alt="icon"></td>
+              <td class="col-md-3"><%= tweet[:name] %></td>
+              <td class="col-md-7"><%= tweet[:text] %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

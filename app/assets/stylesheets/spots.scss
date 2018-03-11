@@ -3,11 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .show {
-  display: flex !important;
-  flex-wrap: wrap;
-  padding-top: 6.0em;
+  padding-top: 4.7em;
 }
 
+.show-container {
+  margin-top: 20px;
+  display: flex !important;
+  flex-wrap: wrap;
+}
 
 .spot-box {
   width: 35%;
