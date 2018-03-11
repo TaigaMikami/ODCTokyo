@@ -5,6 +5,9 @@
     <div class="close-station">
       <label>最寄駅</label><%= @spot.station.name %>駅
     </div>
+    <div class="spot-description">
+      <%= @spot.description %>
+    </div>
   </div>
 
 <% if @twitter.tweet.present? %>
