@@ -19,6 +19,7 @@
 
 /* --------- twitter -----------*/
 .tweet-container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
   margin-right: 3.5em;
 }
 
@@ -46,6 +47,7 @@
 }
 
 .table-body{
+  background: #FCFCFC;
   height: 400px;
   overflow:scroll;
   text-align: center;
@@ -62,19 +64,40 @@
 }
 
 /* --------- machine evaluation -------------- */
+.eval-box {
+  margin-right: 3.5em;
+  background: #FCFCFC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+  .eval-box-title {
+      font-size: 1.2em;
+      background: #32A1CC;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+  }
+}
+
 .machine-evaluation {
   display: flex;
   margin-bottom: 2.0em;
-  margin-left: 3.5em;
+  margin-left: 4.5em;
+  padding-bottom: 5px;
   .evaluation {
     margin-left: 3.0em;
     h1 {
-      margin-left: 5.0em;
+      font-family: "Nico Moji";
+      font-size: 70px;
+      margin-left: 2.5em;
+      margin-top: 0;
     }
   }
 }
 
 .eval-bar {
+  margin-top: 20px;
+  margin-bottom: 10px;
   margin-left: 130px;
   img {
     width: 70%;

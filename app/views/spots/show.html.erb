@@ -12,14 +12,17 @@
 
 <% if @twitter.tweet.present? %>
   <div class="tweet-table-wrapper">
-    <div class="eval-bar">
-      <%= image_tag("eval-bar.png", :size => "500x41") %>
-    </div>
-    <div class="machine-evaluation">
-      <%= image_tag("ai.png", :size => "80x80") %>
-      <div class="evaluation">
-        AIが判定するおすすめ度
-        <h1><%= @evaluation_point  %></h1>
+    <div class="eval-box">
+      <div class="eval-box-title">MICHIKUSA AI</div>
+      <div class="eval-bar">
+        <%= image_tag("eval-bar.png", :size => "500x41") %>
+      </div>
+      <div class="machine-evaluation">
+        <%= image_tag("ai.png", :size => "100x100") %>
+        <div class="evaluation">
+          AIが判定するおすすめ度
+          <h1><%= @evaluation_point  %></h1>
+        </div>
       </div>
     </div>
     <div class="tweet-container">
