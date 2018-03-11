@@ -2,9 +2,13 @@
   font-family: "Nico Moji";
   margin-bottom: 0px;
   background-color: #FCFCFC;
+  a {
+    font-family:"ヒラギノ丸ゴ Pro W4", "Hiragino maru Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO","Verdana","Osaka",sans-serif;
+  }
   .navbar-brand {
+    font-family: "Nico Moji";
     img {
-      display: inline;  
+      display: inline;
     }
   }
   label {
