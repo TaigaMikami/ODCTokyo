@@ -20,6 +20,10 @@
                 <div class="close-station">
                   <label>最寄駅</label><%= station.name %>駅
                 </div>
+                <br>
+                <%= spot.description %>
+                <br><br>
+                <%= link_to "#{spot.name}公式サイトへ", "#{spot.link_url}", :class => "link_url" %>
               </div>
             </div>
           </a>
