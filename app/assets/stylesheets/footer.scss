@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #fcfcfc;
+  color: black ;
+}
+
+.footer-content-left {
+  padding-top: 10px;
+  padding-left: 50px;
+}
+
+.footer-content-right {
+  margin-left: auto;
+  padding-right: 50px;
+  padding-top: 18px;
+  float: right;
+}
