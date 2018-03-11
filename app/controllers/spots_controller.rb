@@ -5,7 +5,9 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @test = Open3.capture3('forego','run','python','./ml/twitter_scrap.py',@spot.name)[0]
+    # TODO 機械学習の学習済みモデル追加後修正
+    # @test = Open3.capture3('forego','run','python','./ml/twitter_scrap.py',@spot.name)[0]
+
     @twitter ||= MyTwitter.new
     if @twitter && @spot.name
       @twitter.tag = @spot.name
@@ -21,6 +23,7 @@ class SpotsController < ApplicationController
         b[:rt] <=> a[:rt]
       end
     end
+    @evaluation_point = Open3.capture3('python','./ml/random_spot_evaluation.py', "#{@twitter.tweet.count}")[0]
     render action: 'show'
   rescue => e
     logger.error e.message
