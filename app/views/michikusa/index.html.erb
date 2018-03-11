@@ -17,7 +17,7 @@
       <% @between_stations.each do |station| %>
         <% station.spots.each do |spot| %>
           <a href="/spots/<%= spot.id %>">
-            <div class="spot" data-spot-name='<%= spot.name %>' data-spot-lat='<%= spot.lat %>' data-spot-lng='<%= spot.lng %>' >
+            <div class="spot" data-spot-name='<%= spot.name %>' data-spot-lat='<%= spot.lat %>' data-spot-lng='<%= spot.lng %>' data-spot-id='<%= spot.id %>'>
               <%= image_tag("#{spot.image_url}", :size => "200x200", :alt => "アイコン") %>
               <div class="spot-title">
                 <h1><%= spot.name %></h1>
@@ -52,6 +52,7 @@ $(function() {
 var markerName = [];
 var markerLat = [];
 var markerLng = [];
+var markerUrl = [];
 var fromName = $('#from').data('from-name');
 var fromLat = $('#from').data('from-lat');
 var fromLng = $('#from').data('from-lng');
@@ -62,8 +63,9 @@ $('.spot').each(function(index, element){
   markerName.push($(element).data('spot-name'));
   markerLat.push($(element).data('spot-lat'));
   markerLng.push($(element).data('spot-lng'));
-  console.log(markerLat);
-  console.log(markerLng);
+  markerUrl.push($(element).data('spot-id'));
+  console.log(markerUrl);
+  // console.log(markerLng);
 });
 
 var map;
@@ -114,7 +116,7 @@ function initMap() {
    });
 
    infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-      content: '<div class="sample">' + markerName[i] + '</div>' // 吹き出しに表示する内容
+      content: '<a href=/spots/'+ markerUrl[i] +'><div class="sample">' + markerName[i] + '</div></a>' // 吹き出しに表示する内容
     });
     infoWindow[i].open(map, marker[i]); // 吹き出しの表示
     markerEvent(i); // マーカーにクリックイベントを追加
