@@ -99,7 +99,7 @@ body {
 
 /* ---------- index ---------- */
 .index {
-  background-color: #fcfcfc;
+  background-color: white;
 }
 .from-to-label {
   margin: 0 auto;
@@ -137,8 +137,8 @@ body {
   margin-bottom: 2em;
   padding: 0.5em 1em;
   padding-bottom: 50px;
-  border: solid 3px #95ccff;
-  background-color: #ffffff;
+  border: solid 3px #32A1CC;
+  background-color: #fcfcfc;
   border-radius: 8px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   .map-title {
@@ -149,8 +149,8 @@ body {
     padding: 0 9px;
     line-height: 1;
     font-size: 30px;
-    background: #ffffff;
-    color: #95ccff;
+    background: #fcfcfc;
+    color: #32A1CC;
     font-weight: bold;
   }
 }
@@ -168,10 +168,10 @@ body {
   position: relative;
   margin: 2em 0;
   padding: 0.5em 1.5em;
-  border: solid 3px #95ccff;
+  border: solid 3px #32A1CC;
   border-radius: 8px;
   // padding-top: 2.0em;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   .spots-title {
     // position: absolute;
@@ -182,8 +182,8 @@ body {
     margin-bottom: 20px;
     line-height: 1;
     font-size: 30px;
-    background: #ffffff;
-    color: #95ccff;
+    background: #fcfcfc;
+    color: #32A1CC;
     font-weight: bold;
   }
 
