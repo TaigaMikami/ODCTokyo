@@ -5,14 +5,13 @@
 .show {
   display: flex !important;
   flex-wrap: wrap;
-  // margin-top: 2.0em;
   padding-top: 6.0em;
 }
 
 
 .spot-box {
   width: 35%;
-  margin-left: 60px;
+  padding-left: 6.0em;
   img {
     border-radius: 10px;
   }
@@ -24,13 +23,14 @@
 }
 
 .table-top{
-  background-color: #5590C8;
+  background-color: #32A1CC;
   vertical-align: middle;
   text-align: center;
   color:#ffffff;
 }
 
 .tweet-table-wrapper{
+  margin-left: 4.0em;
   width: 60%;
 }
 
@@ -58,5 +58,26 @@
     background-color: #FCBA07;
     color: black;
     border-radius: 5px;
+  }
+}
+
+/* --------- machine evaluation -------------- */
+.machine-evaluation {
+  display: flex;
+  margin-bottom: 2.0em;
+  margin-left: 3.5em;
+  .evaluation {
+    margin-left: 3.0em;
+    h1 {
+      margin-left: 5.0em;
+    }
+  }
+}
+
+.eval-bar {
+  margin-left: 130px;
+  img {
+    width: 70%;
+    height: auto;
   }
 }
