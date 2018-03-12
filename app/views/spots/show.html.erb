@@ -8,7 +8,7 @@
       <%= image_tag("#{@spot.image_url}", :size => "400x400", :alt => "アイコン") %>
       <h1><%= image_tag("michikusa.png", :size => "60x60") %>  <%= @spot.name %></h1>
       <div class="close-station">
-        <label>最寄駅</label><%= @spot.station.name %>駅
+        <label>最寄駅</label><%= @spot.station.name %>駅 <%= image_tag("yamanote.png", :size => "30x30") %>
       </div>
       <%= @spot.description %>
       <br><br>
