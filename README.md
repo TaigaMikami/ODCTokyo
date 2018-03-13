@@ -1,5 +1,7 @@
 # ODCTokyo
 
+[About This APP](/AboutApp.md)
+
 ## 使い方
 1.リポジトリをクローン
 ```
